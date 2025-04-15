@@ -2,7 +2,7 @@ let data = null;
 let mapCodeToCountry = {};
 function loadData(load){
     try{
-        fetch("Data.json")
+        fetch("data.json")
         .then(re => re.json())
         .then(re =>{
             data = re;
