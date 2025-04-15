@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Where in the world</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jura:wght@300..700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="statics/header.css">
+    <link rel="stylesheet" href="statics/index.css">
+    <link rel="stylesheet" href="statics/preview.css">
+
+</head>
+<body data-theam="dark">
+   
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">Where in the world ?</a>
+            </div>
+            <button  class="day_night_toggle" type="button">
+                <img src="icons/moon.svg" alt="" class="toggle_icon">
+                <span class="toggle_text">Dark Mode</span>
+            </button>
+        </div>
+    </header>
+    <main>
+        <div class="container ">
+            <a href="index.html" class="back-btn">
+                <img src="icons/left_arrow.svg" alt="">
+                <span>back</span>
+            </a>
+        </div>
+
+        <section class="country_info_container container hide">
+            <div class="country_img">
+                <img src="" alt="">
+            </div>
+            <div class="country_info">
+                <h2>India</h2>
+                <div class="row">
+                    <div class="col">
+                        <div class="mb-1">
+                            <span>Nativ Name:</span>
+                            <span class="light-txt c_name"> Bharat</span>
+                        </div>
+                        <div class="mb-1">
+                            <span>Population:</span>
+                            <span class="light-txt c_population"> Bharat</span>
+                        </div>
+                        <div class="mb-1">
+                            <span>Region:</span>
+                            <span class="light-txt c_region"> Bharat</span>
+                        </div>
+                        <div class="mb-1">
+                            <span>Sub Region:</span>
+                            <span class="light-txt c_s_region"> Bharat</span>
+                        </div>
+                        <div class="mb-1">
+                            <span>Capital:</span>
+                            <span class="light-txt c_capital"> Bharat</span>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="mb-1">
+                            <span>Top Level Domain:</span>
+                            <span class="light-txt c_tld"> Bharat</span>
+                        </div>
+                        <div class="mb-1">
+                            <span>Currencies:</span>
+                            <span class="light-txt c_currancy"> Bharat</span>
+                        </div>
+                        <div class="mb-1">
+                            <span>Languages:</span>
+                            <span class="light-txt c_language"> Bharat</span>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <div class="border_countries_container">
+                    <span>Border Countries: </span>
+                </div>
+            </div>
+        </section>
+        <section class="not_found hide">
+            <h1>Not Found</h1>
+        </section>
+    </main>
+    <script  src="scripts/header.js"></script>
+    <script src="scripts/preview.js" type="module"></script>
+</body>
+</html>
