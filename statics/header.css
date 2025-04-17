@@ -49,3 +49,9 @@ header .container{
     color: var(--text_color);
     font-size: .8rem;
 }
+
+@media (max-width : 676px){
+    .logo a{
+        font-size: 1.2rem;
+    }
+}
