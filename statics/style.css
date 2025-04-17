@@ -6,6 +6,7 @@
     margin-top: 1em;
     display: flex;
     justify-content: space-between;
+
 }
 .search_container{
     width: 50%;
@@ -179,12 +180,33 @@ details[open] > summary > img{
     margin-bottom: 1em;
 }
 
-
+.goto_top{
+    position: fixed;
+    bottom: 10%;
+    right: 5%;
+    height: 50px;
+    width: 50px;
+    background-color: var(--ele_bg_color);
+    border-radius: 50%;
+    padding: 1em;
+    border: none;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+}
+.goto_top:hover{
+    border: 1px solid var(--text_color);
+}
+.goto_top img{
+    rotate: 180deg;
+    filter: invert(var(--invert));
+    scale: 1.5;
+}
 
 @media  (max-width : 676px){
     body{
         font-size: 15px;
     }
+    
     .filter_cards{
         flex-direction: column;
         gap: 2em;
