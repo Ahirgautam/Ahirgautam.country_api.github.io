@@ -3,6 +3,7 @@ import {loadData,data} from './fetchData.js'
 const cardContainer = document.getElementsByClassName("card_container")[0];
 const searchBox = document.getElementById('searchBox');
 const dropDown = document.getElementsByClassName("drop_down")[0];
+const goUp = document.getElementsByClassName("goto_top")[0];
 let dropDownContent = document.getElementsByClassName("drop_down_content")[0];
 
 let cards = cardContainer.children;
@@ -27,6 +28,7 @@ async function displayData(){
         let region = document.createElement("span");
 
         card.classList.add("card");
+        
         cardImag.classList.add("country_img");
         cardInfo.classList.add("country_info");
         countryName.classList.add("country_name");
@@ -38,7 +40,7 @@ async function displayData(){
         card.dataset.name = element.name;
         card.dataset.region = element.region;
         countryName.innerText = element.name;
-        population.innerText = element.population;
+        population.innerText = (element.population).toLocaleString();
         capital.innerText = element.capital;
         region.innerText = element.region;
         
@@ -61,23 +63,24 @@ async function displayData(){
         cardContainer.append(
             card
         );
-        // console.log(element.region)
-        // if(i % 2 == 0)
-        //     await sleep(100);
+
     }
 
 }
 
-async function  sleep(interval){
+async function  sleep(interval, card){
     return new Promise((r) =>{
-        setTimeout(r, interval);
+        setTimeout(()=>{
+            card.classList.remove("hide");
+            r();
+        }, interval);
     });
 }
 
 
 
 
-searchBox.addEventListener("keydown", (e)=>{
+searchBox.addEventListener("input", (e)=>{
    for(let i = 0;i < cards.length; i++){
         let element = cards[i];
         if(element.dataset.name.toUpperCase().indexOf(searchBox.value.toUpperCase()) != -1){
@@ -96,22 +99,14 @@ dropDownContent.addEventListener("click", (e)=>{
     dropDown.open = false;
 });
 
-// `<a href="" class="card ${element.region}" data-name =  ${element.name}>
-//         <div class="country_img">
-//             <img src="" alt="">
-//         </div>
-//         <div class="country_info">
-//             <h2 class="country_name">
-//                 ${element.name}
-//             </h2>
-//             <div class="country_population mb-1">
-//                 Population : <span class="population light-txt">${element.population}</span>
-//             </div>
-//             <div class="country_region mb-1">
-//                 Region : <span class="region light-txt"> ${element.region}</span>
-//             </div>
-//             <div class="country_capital mb-1">
-//                 Capital : <span class="capital light-txt"> ${element.capital}</span>
-//             </div>
-//         </div>
-//     </a>`
+goUp.addEventListener("click", ()=>{
+    window.scrollTo(0,0);
+});
+
+window.addEventListener("scroll", (e)=>{
+    if(window.scrollY >= window.innerHeight){
+        goUp.classList.remove("hide");
+    }else{
+        goUp.classList.add("hide");
+    }
+})
